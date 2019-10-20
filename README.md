@@ -28,5 +28,5 @@ Get Place's Address
 
 Get Place's Geometry
 ```
-/geomtery?key="YOUR_API_KEY"&query="PLACE_NAME"
+/geometry?key="YOUR_API_KEY"&query="PLACE_NAME"
 ```
