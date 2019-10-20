@@ -30,8 +30,6 @@ def search_details(key,place_id):
 
 def searchapi(key,query,param='search'):
     try: 
-        #key="AIzaSyDYaa_ZG2qePyaEzKUyPyno9dOc3nNyySA"
-        #query="Trans Studio Bandung"
         place_id= search_place(key,query)
         details= search_details(key,place_id)
         if param=='search':
