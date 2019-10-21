@@ -49,7 +49,7 @@ def searchapi(key,query,param='search'):
     except err.ZeroResultError as e:
         message = {'results':
         {
-            'status_code':200,
+            'status_code':404,
             'status':e.status,
             'message':e.msg,
         }, 'html_attributions':[]
@@ -59,7 +59,7 @@ def searchapi(key,query,param='search'):
     except err.OverQueryError as e:
         message = {'results':
         {
-            'status_code':200,
+            'status_code':429,
             'status':e.status,
             'message':e.msg,
         }, 'html_attributions':[]
@@ -69,7 +69,7 @@ def searchapi(key,query,param='search'):
     except err.RequestDeniedError as e:
         message = {'results':
         {
-            'status_code':200,
+            'status_code':401,
             'status':e.status,
             'message':e.msg,
         }, 'html_attributions':[]
@@ -79,7 +79,7 @@ def searchapi(key,query,param='search'):
     except err.InvalidRequestError as e:
         message = {'results':
         {
-            'status_code':200,
+            'status_code':400,
             'status':e.status,
             'message':e.msg,
         }, 'html_attributions':[]
@@ -89,7 +89,7 @@ def searchapi(key,query,param='search'):
     except err.UnknownError as e:
         message = {'results':
         {
-            'status_code':200,
+            'status_code':400,
             'status':e.status,
             'message':e.msg,
         }, 'html_attributions':[]
@@ -99,7 +99,7 @@ def searchapi(key,query,param='search'):
     except err.NotFoundError as e:
         message = {'results':
         {
-            'status_code':200,
+            'status_code':404,
             'status':e.status,
             'message':e.msg,
         }, 'html_attributions':[]
