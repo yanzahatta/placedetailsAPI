@@ -5,6 +5,10 @@ from searchAPI import searchapi
 import urllib.parse
 
 class DetailHandler(BaseHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header('Access-Control-Allow-Origin','*')
+        BaseHTTPRequestHandler.end_headers(self)
+    
     def response_json(self,msg, statuscode=200):
         self.send_response(statuscode)
         self.send_header("Content-Type","application/json")
