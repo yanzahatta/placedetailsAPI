@@ -81,6 +81,8 @@ class DetailHandler(BaseHTTPRequestHandler):
             response= searchapi(key,query,"geometry")
             self.response_json(response)
             return  
+        else:
+            self.response_json({"error: path not found"},404)
 
 if __name__ == "__main__":
     server_addr=("",1234)
