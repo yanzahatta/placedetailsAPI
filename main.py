@@ -10,10 +10,13 @@ class DetailHandler(BaseHTTPRequestHandler):
         BaseHTTPRequestHandler.end_headers(self)
     
     def response_json(self,msg, statuscode=200):
+        message = json.dumps((msg),indent=2).encode("utf-8")
+        self.protocol_version = "HTTP/1.1"
         self.send_response(statuscode)
+        self.send_header("Content-Length", len(message))
         self.send_header("Content-Type","application/json")
         self.end_headers()
-        self.wfile.write(json.dumps((msg),indent=2).encode("utf-8"))
+        self.wfile.write(message)
     
 
     def get_key(self):
