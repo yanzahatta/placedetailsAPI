@@ -33,10 +33,10 @@ class DetailHandler(BaseHTTPRequestHandler):
             key = self.get_key()
             query = self.get_query()
             if not key:
-                self.response_json({"error: key is not found"},400)
+                self.response_json({"error": "key is not found"},400)
                 return
             if not query:
-                self.response_json({"error: query is not found"},400)
+                self.response_json({"error": "query is not found"},400)
                 return
             
             response= searchapi(key,query)
@@ -47,10 +47,10 @@ class DetailHandler(BaseHTTPRequestHandler):
             key = self.get_key()
             query = self.get_query()
             if not key:
-                self.response_json({"error: key is not found"},400)
+                self.response_json({"error": "key is not found"},400)
                 return
             if not query:
-                self.response_json({"error: query is not found"},400)
+                self.response_json({"error": "query is not found"},400)
                 return
             
             response= searchapi(key,query,"url")
@@ -61,10 +61,10 @@ class DetailHandler(BaseHTTPRequestHandler):
             key = self.get_key()
             query = self.get_query()
             if not key:
-                self.response_json({"error: key is not found"},400)
+                self.response_json({"error": "key is not found"},400)
                 return
             if not query:
-                self.response_json({"error: query is not found"},400)
+                self.response_json({"error": "query is not found"},400)
                 return
             
             response= searchapi(key,query,"address")
@@ -75,17 +75,17 @@ class DetailHandler(BaseHTTPRequestHandler):
             key = self.get_key()
             query = self.get_query()
             if not key:
-                self.response_json({"error: key is not found"},400)
+                self.response_json({"error": "key is not found"},400)
                 return
             if not query:
-                self.response_json({"error: query is not found"},400)
+                self.response_json({"error": "query is not found"},400)
                 return
             
             response= searchapi(key,query,"geometry")
             self.response_json(response)
             return  
         else:
-            self.response_json({"error: path not found"},404)
+            self.response_json({"error": "path not found"},404)
 
 if __name__ == "__main__":
     server_addr=("",1234)
